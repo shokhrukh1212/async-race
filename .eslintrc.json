@@ -2,7 +2,42 @@
   "extends": "airbnb",
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "max-lines": ["error", { "max": 40 }],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "max-lines-per-function": ["error", { "max": 40 }],
+    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+    "quotes": ["error", "double", { "avoidEscape": true }],
+   "indent": "off",
+   "react/jsx-indent" : "off",
+   "linebreak-style": ["error", "windows"],
+   "no-unused-vars": "off",
+   "react/function-component-definition": [
+    2,
+    {
+      "namedComponents": "arrow-function",
+      "unnamedComponents": "arrow-function"
+    }
+  ],
+  "import/no-unresolved": [
+    2, 
+    { "caseSensitive": false }
+ ],
+ "arrow-body-style": "off",
+ "import/extensions": 0,
+ "object-curly-newline": ["error", { "consistent": true }]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "react/prop-types": "off"
+      }
+    }
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx"]
+      },
+      "typescript": {}
+    }
   }
 }

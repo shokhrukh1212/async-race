@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+    background-image: url("assets/images/background.avif");
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 0 50px;
+}
