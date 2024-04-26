@@ -14,7 +14,7 @@ const RaceContent = () => {
     return (
             <Box sx={{ mt: 2 }}>
                 <Typography variant="h4" sx={{ mb: 2 }}>
-                    Garage: (12 cars), Page: 1
+                    {`Garage: ${cars.length} cars, Page: 1`}
                 </Typography>
 
                     { cars.map((item: CarItemType) => (

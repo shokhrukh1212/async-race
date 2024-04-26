@@ -12,8 +12,18 @@ const fetchApi = async (method: string, endpoint: string, body?: Object) => {
 
     try {
         const res = await fetch(url, options);
+
+        if (res.ok) {
+          return await res.json();
+        }
+        console.log("Failed to fetch!");
+        return null;
     } catch (error: unknown) {
-        if(error instanceof Error)
-            console.log(error.message);
+        if (error instanceof Error) {
+          console.log(error.message);
+        }
+        return null;
     }
 };
+
+export default fetchApi;

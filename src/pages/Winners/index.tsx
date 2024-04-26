@@ -9,7 +9,7 @@ const Winners = () => {
     const [sortedRows, setSortedRows] = useState<Row[]>(rows);
 
   return (
-    <Box sx={{ height: 400, width: "80%", m: "auto", color: "#fff" }}>
+    <Box sx={{ height: 400, width: "80%", m: "auto", color: "#ffffff" }}>
       <DataGrid
         rows={sortedRows}
         columns={columns}

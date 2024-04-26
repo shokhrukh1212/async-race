@@ -29,6 +29,8 @@ export interface Pagination {
 
 export interface CarContextInterface {
     cars: CarItemType[],
+    chosenCar: CarItemType,
+    setChosenCar: Dispatch<SetStateAction<CarItemType>>,
     setCars: Dispatch<SetStateAction<CarItemType[]>>,
 };
 
