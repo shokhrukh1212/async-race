@@ -6,7 +6,8 @@ const useFetchCars = (setCars: Dispatch<SetStateAction<CarItemType[]>>) => {
     useEffect(() => {
         const fetchCars = async () => {
             const data = await fetchApi("GET", "garage") || [];
-            setCars(data);
+            const newData = data.map((d: CarItemType) => ({ ...d, distance: 0, duration: 0 }));
+            setCars(newData);
         };
 
         fetchCars();

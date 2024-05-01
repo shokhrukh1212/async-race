@@ -17,6 +17,7 @@ const CreateCar = () => {
                 color,
             };
             const newCarData = await fetchApi("POST", "garage", body);
+            console.log(newCarData);
             if (newCarData) {
                 setCars([...cars, newCarData]);
                 setColor("#000000");

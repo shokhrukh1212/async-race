@@ -5,23 +5,48 @@ const initialState = {
   id: 0,
   name: "",
   color: "",
+  distance: 0,
+  duration: 0,
 };
 
 const CarContext = createContext<CarContextInterface>({
     cars: [],
     chosenCar: initialState,
+    currentPage: 1,
+    currentCars: [],
     setChosenCar: () => {},
     setCars: () => {},
+    setCurrentPage: () => {},
+    setCurrentCars: () => {},
 });
 
 const CarContextProvider = ({ children }: CreateContextProviderProps) => {
     const [cars, setCars] = useState<CarItemType[]>([]);
     const [chosenCar, setChosenCar] = useState<CarItemType>(initialState);
+    const [currentPage, setCurrentPage] = useState<number>(1);
+    const [currentCars, setCurrentCars] = useState<CarItemType[]>([]);
 
     const contextValue = useMemo(
     () => (
-      { cars, chosenCar, setChosenCar, setCars }),
-      [cars, chosenCar, setChosenCar, setCars],
+      {
+        cars,
+        chosenCar,
+        currentPage,
+        currentCars,
+        setChosenCar,
+        setCars,
+        setCurrentPage,
+        setCurrentCars,
+      }),
+      [
+        cars,
+        chosenCar,
+        currentPage,
+        currentCars,
+        setChosenCar,
+        setCars,
+        setCurrentPage,
+        setCurrentCars],
     );
 
     return (

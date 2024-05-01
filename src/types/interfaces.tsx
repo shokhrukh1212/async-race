@@ -3,15 +3,19 @@ import { Dispatch, SetStateAction, ReactNode } from "react";
 export interface CarItemType {
     name: string,
     color: string,
-    id: number
+    id: number,
+    distance: number,
+    duration: number
 };
 
 export interface CarItemProps {
-    item: CarItemType,
+    item: CarItemType
 };
 
-export interface CarColor {
-    color: string
+export interface CarIconProps {
+    color: string,
+    distance: number,
+    duration: number
 };
 
 export interface Row {
@@ -30,10 +34,19 @@ export interface Pagination {
 export interface CarContextInterface {
     cars: CarItemType[],
     chosenCar: CarItemType,
+    currentPage: number,
+    currentCars: CarItemType[],
     setChosenCar: Dispatch<SetStateAction<CarItemType>>,
     setCars: Dispatch<SetStateAction<CarItemType[]>>,
+    setCurrentPage: Dispatch<SetStateAction<number>>
+    setCurrentCars: Dispatch<SetStateAction<CarItemType[]>>
 };
 
 export interface CreateContextProviderProps {
     children: ReactNode;
+};
+
+export interface CarDriveData {
+    velocity: number,
+    distance: number
 };

@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import { rows, columns } from "../../data/tableData";
-import { Row, Pagination } from "../../types/interfaces";
+import { Row } from "../../types/interfaces";
 import handleSort from "../../utils/tableSort";
 
 const Winners = () => {

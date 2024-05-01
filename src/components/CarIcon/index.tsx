@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
-import { CarColor } from "../../types/interfaces";
+import { CarIconProps } from "../../types/interfaces";
 
-const CarIcon: React.FC<CarColor> = ({ color = "#000" }) => {
+const CarIcon: React.FC<CarIconProps> = ({ color = "#000", distance, duration }) => {
   return (
-    <Box sx={{ position: "absolute", left: "70px", bottom: "-30px" }}>
+    <Box sx={{ position: "absolute", left: "70px", bottom: "-30px", transform: `translateX(${distance}px)`, transition: `transform ${duration}s linear` }}>
       <svg fill={color} version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="90px" height="90px" viewBox="-3.14 -3.14 37.73 37.73" xmlSpace="preserve" transform="matrix(-1, 0, 0, 1, 0, 0) rotate(0)">
         <g id="SVGRepo_bgCarrier" strokeWidth="0" />
         <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
