@@ -12,7 +12,6 @@ const RaceContent = () => {
     useEffect(() => {
         const visibleCars = cars.slice((currentPage - 1) * 7, currentPage * 7);
         setCurrentCars(visibleCars);
-        console.log(visibleCars, " - visible cars");
     }, [cars, currentPage]);
 
     useFetchCars(setCars);

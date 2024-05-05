@@ -1,11 +1,11 @@
 import { Dispatch, SetStateAction } from "react";
-import { Row } from "../types/interfaces";
+import { WinnerCarType } from "../types/interfaces";
 
 const handleSort = (
-  field: keyof Row,
+  field: keyof WinnerCarType,
   direction: "asc" | "desc",
-  rows: Row[],
-  setSortedRows: Dispatch<SetStateAction<Row[]>>,
+  rows: WinnerCarType[],
+  setSortedRows: Dispatch<SetStateAction<WinnerCarType[]>>,
 ) => {
     const sortedVisibleRows = rows.slice().sort((a, b) => {
         if (direction === "asc") return (a[field] as number) - (b[field] as number);

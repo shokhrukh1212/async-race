@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext } from "react";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
@@ -7,34 +7,33 @@ import CreateCar from "../CreateCar";
 import UpdateCar from "../UpdateCar";
 import GenerateCars from "../GenerateCars";
 import useWindowWidth from "../../hooks/windowWidth";
-import useRaceCars from "../../hooks/raceCars";
-import useResetCars from "../../hooks/resetCars";
+import { CarContext } from "../../context/CarContext";
+import resetCars from "../../utils/resetCars";
+import raceCars from "../../utils/raceCars";
 
 const RaceContentHeader = () => {
-    const [disabled, setDisabled] = useState<boolean>(false);
+    const { isDisabled, winners, setIsDisabled, currentCars, setCurrentCars, setWinners } = useContext(CarContext);
     const { width } = useWindowWidth();
-    const { handleRaceCars } = useRaceCars(width);
-    const { handleResetCars } = useResetCars();
 
     const handleRace = async () => {
-        setDisabled(!disabled);
-        await handleRaceCars();
+        setIsDisabled(true);
+        await raceCars(currentCars, setCurrentCars, width, winners, setWinners);
     };
 
     const handleReset = async () => {
-        setDisabled(!disabled);
-        await handleResetCars();
+        setIsDisabled(false);
+        await resetCars(currentCars, setCurrentCars);
     };
 
     return (
             <Box sx={{ display: "flex", justifyContent: "space-between", mt: 5 }}>
                 <Box>
-                    <Button variant="outlined" sx={{ mr: 2, fontSize: "1rem" }} onClick={handleRace} disabled={disabled}>
+                    <Button variant="outlined" sx={{ fontSize: { xs: "0.5rem", sm: "0.7rem", md: "1rem" }, mr: { xs: 1, sm: 2, md: 3 } }} onClick={handleRace} disabled={isDisabled}>
                         Race
                         <KeyboardArrowRightIcon />
                     </Button>
 
-                    <Button variant="outlined" sx={{ mr: 2, fontSize: "1rem" }} onClick={handleReset} disabled={!disabled}>
+                    <Button variant="outlined" sx={{ fontSize: { xs: "0.5rem", sm: "0.7rem", md: "1rem" }, mr: { xs: 1, sm: 2, md: 3 } }} onClick={handleReset} disabled={!isDisabled}>
                         Reset
                         <RestartAltIcon />
                     </Button>

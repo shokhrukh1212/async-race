@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
+import { CarContextProvider } from "./context/CarContext";
 import "./assets/styles/globalStyle.css";
 
 const theme = createTheme({
@@ -20,7 +21,9 @@ root.render(
   <React.StrictMode>
       <ThemeProvider theme={theme}>
         <BrowserRouter>
-          <App />
+          <CarContextProvider>
+            <App />
+          </CarContextProvider>
         </BrowserRouter>
       </ThemeProvider>
   </React.StrictMode>,

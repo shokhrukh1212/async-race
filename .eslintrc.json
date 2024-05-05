@@ -3,12 +3,14 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "max-lines-per-function": ["error", { "max": 40 }],
+    "max-len": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "quotes": ["error", "double", { "avoidEscape": true }],
    "indent": "off",
    "react/jsx-indent" : "off",
    "linebreak-style": ["error", "windows"],
    "no-unused-vars": "off",
+   "react/jsx-one-expression-per-line": "off",
    "react/function-component-definition": [
     2,
     {
