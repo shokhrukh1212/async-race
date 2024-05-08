@@ -6,12 +6,13 @@
     "max-len": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "quotes": ["error", "double", { "avoidEscape": true }],
-   "indent": "off",
-   "react/jsx-indent" : "off",
-   "linebreak-style": ["error", "unix"],
-   "no-unused-vars": "off",
-   "react/jsx-one-expression-per-line": "off",
-   "react/function-component-definition": [
+    "indent": "off",
+    "react/jsx-indent" : "off",
+    "linebreak-style": ["error", "unix"],
+    "no-unused-vars": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "no-console": "off",
+    "react/function-component-definition": [
     2,
     {
       "namedComponents": "arrow-function",
