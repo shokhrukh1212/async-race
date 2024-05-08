@@ -1,6 +1,6 @@
 # Async-race-api
 
-## Task: [link](https://khon-async-race.netlify.app/)
+## Task: [deployment link](https://khon-async-race.netlify.app/)
 
 ## Screenshots
 ![image](https://github.com/shokhrukh1212/async-race/assets/102215837/00f43765-77e9-4ac6-8ab9-d789d060f32a)
