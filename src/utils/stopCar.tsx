@@ -8,17 +8,17 @@ const stopCarItem = async (
         setCurrentCars: Dispatch<SetStateAction<CarItemType[]>>,
     ) => {
     try {
-                const data = await fetchApi("PATCH", `engine?id=${item.id}&status=stopped`);
-                if (data) {
-                    const newCars = currentCars.map((car) => {
-                        if (car.id === item.id) {
-                            return { ...item, duration: 0, distance: 0 };
-                        }
-                        return car;
-                    });
-                    setCurrentCars(newCars);
+        const data = await fetchApi("PATCH", `engine?id=${item.id}&status=stopped`);
+        if (data) {
+            const newCars = currentCars.map((car) => {
+                if (car.id === item.id) {
+                    return { ...item, duration: 0, distance: 0 };
                 }
-                return null;
+                return car;
+            });
+            setCurrentCars(newCars);
+        }
+        return null;
     } catch (error: unknown) {
         if (error instanceof Error) {
             console.log(error.message);

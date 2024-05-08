@@ -11,7 +11,7 @@ const GenerateCars = () => {
     const handleGenerate = async () => {
         try {
             const newCars = [];
-            for (let i = 0; i < 20; i += 1) {
+            for (let i = 0; i < 100; i += 1) {
                 const res = fetchApi("POST", "garage", generateCarItem());
                 if (res) newCars.push(res);
             }

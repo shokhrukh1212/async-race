@@ -34,12 +34,14 @@ export interface CarContextInterface {
     currentPage: number,
     currentCars: CarItemType[],
     isDisabled: boolean,
+    hasWinner: boolean,
     setChosenCar: Dispatch<SetStateAction<CarItemType>>,
     setCars: Dispatch<SetStateAction<CarItemType[]>>,
     setCurrentPage: Dispatch<SetStateAction<number>>
     setCurrentCars: Dispatch<SetStateAction<CarItemType[]>>
     setIsDisabled: Dispatch<SetStateAction<boolean>>
     setWinners: Dispatch<SetStateAction<WinnerCarType[]>>,
+    setHasWinner: Dispatch<SetStateAction<boolean>>,
 };
 
 export interface CreateContextProviderProps {

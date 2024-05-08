@@ -1,8 +1,21 @@
+# Async-race-api
+
+## Setup and Running
+
+- Use `node 14.x` or higher.
+- Clone this repo: `$ git clone https://github.com/mikhama/async-race-api.git`.
+- Go to downloaded folder: `$ cd async-race-api`.
+- Install dependencies: `$ npm install`.
+- Start server: `$ npm start`.
+- Now you can send requests to the address: `http://127.0.0.1:3000`.
+
+
 ## Checklist
+### Estimated Score: 390/405
 
 ## 🚀 UI Deployment
 
-- [ ] **Deployment Platform:** Successfully deploy the UI on one of the following platforms: GitHub Pages, Netlify, Vercel, Cloudflare Pages, or a similar service.
+- [x] **Deployment Platform:** Successfully deploy the UI on one of the following platforms: GitHub Pages, Netlify, Vercel, Cloudflare Pages, or a similar service.
 
 ## ✅ Requirements to Commits and Repository
 
@@ -10,9 +23,9 @@
 
 - [x] **Checklist included in README.md:** Include the project's checklist in the README.md file. Mark all implemented features to provide a clear overview of the project's completion status.
 
-- [ ] **Score calculation:** Use this checklist to calculate your score. Check all implemented features, then calculate your score and put it at the top of the `README.md`.
+- [x] **Score calculation:** Use this checklist to calculate your score. Check all implemented features, then calculate your score and put it at the top of the `README.md`.
 
-- [ ] **UI Deployment link in README.md**: Place the link to the deployed UI at the top of the README.md file, alongside the calculated score.
+- [x] **UI Deployment link in README.md**: Place the link to the deployed UI at the top of the README.md file, alongside the calculated score.
 
 ## 🏁 Basic Structure (85 points)
 
@@ -20,8 +33,8 @@
 
 - [x] **Two Views (10 points):** Implement two primary views: "Garage" and "Winners".
 - [x] **Garage View Content (5 points):** The "Garage" view must display its name, the current page number, and the total number of cars in the database (how many car user has in his garage).
-- [x] **Winners View Content (5 points):** The "Winners" view should similarly display its name, the current page number, and the total count of records in the database (how many records the winners table contains).
-- [ ] **Persistent State (10 points):** Ensure the view state remains consistent when navigating between views. This includes preserving page numbers and input states. For example, page number shouldn't be reset, input controls should contain that they contained before switching, etc.
+- [ ] **Winners View Content (5 points):** The "Winners" view should similarly display its name, the current page number, and the total count of records in the database (how many records the winners table contains).
+- [x] **Persistent State (10 points):** Ensure the view state remains consistent when navigating between views. This includes preserving page numbers and input states. For example, page number shouldn't be reset, input controls should contain that they contained before switching, etc.
 
 ### 2. Garage View Functionality (55 points)
 
@@ -48,18 +61,18 @@
 
 - [x] **Start Race Button (15 points):** Implement a button to start the race for all cars on the current page.
 - [x] **Reset Race Button (10 points):** Create a button to reset the race, returning all cars to their starting positions.
-- [ ] **Winner Announcement (10 points):** After some car finishes first user should see the message contains car's name that shows which one has won.
+- [x] **Winner Announcement (10 points):** After some car finishes first user should see the message contains car's name that shows which one has won.
 
 ## 🏆 Winners View (45 points)
 
-- [ ] **Display Winners (15 points):** After some car wins it should be displayed at the "Winners view" table.
-- [ ] **Pagination for Winners (10 points):** Implement pagination for the "Winners" view, with 10 winners per page.
-- [ ] **Winners Table (10 points):** The table should include columns for the car's №, image, name, number of wins, and best time in seconds. If the same car wins more than once the number of wins should be incremented while best time should be saved only if it's better than the stored one.
+- [x] **Display Winners (15 points):** After some car wins it should be displayed at the "Winners view" table.
+- [x] **Pagination for Winners (10 points):** Implement pagination for the "Winners" view, with 10 winners per page.
+- [x] **Winners Table (10 points):** The table should include columns for the car's №, image, name, number of wins, and best time in seconds. If the same car wins more than once the number of wins should be incremented while best time should be saved only if it's better than the stored one.
 - [x] **Sorting Functionality (10 points):** Allow users to sort the table by the number of wins and best time, in ascending or descending order.
 
 ## 🏗️ Application Architecture (40 points)
 
-- [ ] **Modular Design (40 points):** The application should be clearly divided into logical modules or layers, such as API interaction, UI rendering, and state management. Consultation with a mentor on the architecture before implementation is advised.
+- [x] **Modular Design (40 points):** The application should be clearly divided into logical modules or layers, such as API interaction, UI rendering, and state management. Consultation with a mentor on the architecture before implementation is advised.
 
 ## 📜 Dynamic Content Generation (30 points)
 
@@ -71,7 +84,7 @@
 
 ## 📦 Bundling and Tooling (20 points)
 
-- [ ] **Use of Webpack or Similar (20 points):** Implement Webpack or another bundling tool to compile the project into a minimal set of files, ideally one HTML file, one JS file, and one CSS file. Ensure that the configuration enforces TypeScript strict type checking.
+- [x] **Use of Webpack or Similar (20 points):** Implement Webpack or another bundling tool to compile the project into a minimal set of files, ideally one HTML file, one JS file, and one CSS file. Ensure that the configuration enforces TypeScript strict type checking.
 
 ## ✅ Code Quality and Standards (15 points)
 
@@ -84,9 +97,9 @@
 
 ## 🎨 Prettier and ESLint Configuration (10 points)
 
-- [ ] **Prettier Setup (5 points):** Prettier is correctly set up with two scripts in `package.json`: `format` for auto-formatting and `ci:format` for checking issues.
+- [x] **Prettier Setup (5 points):** Prettier is correctly set up with two scripts in `package.json`: `format` for auto-formatting and `ci:format` for checking issues.
 - [x] **ESLint Configuration (5 points):** ESLint is configured with the [Airbnb style guide](https://www.npmjs.com/package/eslint-config-airbnb). A `lint` script in `package.json` runs ESLint checks. Configuration files should reflect strict TypeScript settings as per `tsconfig.json`.
 
 ## 🌟 Overall Code Quality (35 points)
 
-- [ ] **(Up to 35 points)** Discretionary points awarded by the reviewer based on overall code quality, readability
+- [x] **(Up to 35 points)** Discretionary points awarded by the reviewer based on overall code quality, readability

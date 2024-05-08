@@ -12,10 +12,7 @@ const CreateCar = () => {
 
     const handleCreateCar = async () => {
         try {
-            const body = {
-                name,
-                color,
-            };
+            const body = { name, color };
             const newCarData = await fetchApi("POST", "garage", body);
             if (newCarData) {
                 setCars([...cars, newCarData]);
@@ -33,9 +30,9 @@ const CreateCar = () => {
 
     return (
         <Box>
-                <TextField id="outlined-basic" size="small" label="Car Brand" variant="outlined" sx={{ mr: 1 }} value={name} onChange={(e) => setName(e.target.value)} />
-                <input type="color" value={color} onChange={(e) => setColor(e.target.value)} />
-                <Button variant="outlined" sx={{ mr: 2, fontSize: "1rem" }} disabled={!name} onClick={handleCreateCar}>Create</Button>
+            <TextField id="outlined-basic" size="small" label="Car Brand" variant="outlined" sx={{ mr: 1 }} value={name} onChange={(e) => setName(e.target.value)} />
+            <input type="color" value={color} onChange={(e) => setColor(e.target.value)} />
+            <Button variant="outlined" sx={{ mr: 2, fontSize: "1rem" }} disabled={!name} onClick={handleCreateCar}>Create</Button>
         </Box>
     );
 };

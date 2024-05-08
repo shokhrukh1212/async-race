@@ -18,7 +18,6 @@ const startCarItem = async (
         newCars[index] = { ...item, distance, duration };
         return newCars;
       });
-
       const data2 = await fetchApi(
         "PATCH",
         `engine?id=${item.id}&status=drive`,

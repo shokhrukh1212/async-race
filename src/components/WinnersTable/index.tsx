@@ -9,7 +9,7 @@ const WinnersTable: React.FC<TableDataProps> = ({ rows }) => {
     const [sortedRows, setSortedRows] = useState<WinnerCarType[]>([]);
     useEffect(() => { setSortedRows(rows); }, [rows]);
 
-    if (rows.length === 0) return <h1>Loading ...</h1>;
+    if (rows.length === 0) return <h1 style={{ marginTop: "100px", paddingLeft: "100px" }}>No Winners found!</h1>;
 
   return (
     <Box sx={{ height: 400, width: "80%", m: "auto", mt: 5, color: "#ffffff" }}>
@@ -19,7 +19,7 @@ const WinnersTable: React.FC<TableDataProps> = ({ rows }) => {
         initialState={{
             pagination: {
               paginationModel: {
-                pageSize: 5,
+                pageSize: 10,
               },
             },
           }}
@@ -27,7 +27,7 @@ const WinnersTable: React.FC<TableDataProps> = ({ rows }) => {
           const { field, sort = "asc" } = sortModel[0];
           handleSort(field as keyof WinnerCarType, sort ?? "asc", rows, setSortedRows);
         }}
-        pageSizeOptions={[5]}
+        pageSizeOptions={[10]}
         disableRowSelectionOnClick
         disableColumnMenu
         sortingOrder={["asc", "desc"]}

@@ -13,21 +13,21 @@ import stopCarItem from "../../utils/stopCar";
 
 const CarItem: React.FC<CarItemProps> = ({ item }) => {
     const [disabled, setDisabled] = useState<boolean>(false);
-    const { currentCars, setCurrentCars, setChosenCar, isDisabled, setIsDisabled } = useContext(CarContext);
+    const { currentCars, setCurrentCars, setChosenCar, isDisabled } = useContext(CarContext);
     const { width } = useWindowWidth();
 
     useEffect(() => {
-        if (!isDisabled) setDisabled(false);
+        if (isDisabled) setDisabled(true);
+        else setDisabled(false);
     }, [isDisabled]);
 
     const handleDelete = useDeleteCar(item);
     const handleDrive = async () => {
-        setIsDisabled(true);
         setDisabled(true);
         await startCarItem(item, width, currentCars, setCurrentCars);
     };
+
     const handleStop = async () => {
-        setIsDisabled(false);
         setDisabled(false);
         await stopCarItem(item, currentCars, setCurrentCars);
     };
@@ -35,8 +35,8 @@ const CarItem: React.FC<CarItemProps> = ({ item }) => {
     return (
         <Box sx={{ position: "relative", borderBottom: "2px dashed #000", paddingBottom: 1.5, marginBottom: 2 }}>
             <Box sx={{ display: "flex", mb: 1 }}>
-                <Button variant="outlined" size="small" sx={{ mr: 1 }} onClick={() => setChosenCar(item)}>Select</Button>
-                <Button variant="outlined" size="small" onClick={handleDelete}>Remove</Button>
+                <Button variant="outlined" size="small" sx={{ mr: 1 }} onClick={() => setChosenCar(item)} disabled={disabled}>Select</Button>
+                <Button variant="outlined" size="small" onClick={handleDelete} disabled={disabled}>Remove</Button>
             </Box>
             <Box sx={{ display: "flex", justifyContent: "flex-start", alignItems: "center", position: "relative", padding: 0 }}>
                 <Box sx={{ display: "flex", flexDirection: "column" }}>

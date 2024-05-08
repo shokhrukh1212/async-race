@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { CarContext } from "../../context/CarContext";
 import fetchApi from "../../utils/api";
+import { CarItemType } from "../../types/interfaces";
 
 const UpdateCar = () => {
     const [name, setName] = useState<string>("");
@@ -20,7 +21,7 @@ const UpdateCar = () => {
             const body = { name, color };
             const newCar = await fetchApi("PUT", `garage/${chosenCar.id}`, body);
             if (newCar) {
-                const updatedCars = cars.map((car) => {
+                const updatedCars = cars.map((car: CarItemType) => {
                     if (car.id === chosenCar.id) return newCar;
                 return car;
                 });

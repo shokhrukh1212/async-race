@@ -2,9 +2,7 @@ import { Dispatch, SetStateAction, useEffect } from "react";
 import fetchApi from "../utils/api";
 import { WinnerCarType, WinnerType } from "../types/interfaces";
 
-const useFetchWinners = (
-        setWinners: Dispatch<SetStateAction<WinnerCarType[]>>,
-    ) => {
+const useFetchWinners = (setWinners: Dispatch<SetStateAction<WinnerCarType[]>>) => {
     useEffect(() => {
         const fetchWinners = async () => {
             const data = await fetchApi("GET", "winners");

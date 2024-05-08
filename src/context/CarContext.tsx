@@ -1,7 +1,7 @@
 import { createContext, useState, useMemo } from "react";
 import { CarItemType, CarContextInterface, CreateContextProviderProps, WinnerModal, WinnerCarType } from "../types/interfaces";
 
-const initialState = {
+export const initialState = {
   id: 0,
   name: "",
   color: "#000000",
@@ -16,12 +16,14 @@ const CarContext = createContext<CarContextInterface>({
     currentCars: [],
     isDisabled: false,
     winners: [],
+    hasWinner: false,
     setChosenCar: () => {},
     setCars: () => {},
     setCurrentPage: () => {},
     setCurrentCars: () => {},
     setIsDisabled: () => {},
     setWinners: () => {},
+    setHasWinner: () => {},
 });
 
 const CarContextProvider = ({ children }: CreateContextProviderProps) => {
@@ -31,9 +33,9 @@ const CarContextProvider = ({ children }: CreateContextProviderProps) => {
     const [currentCars, setCurrentCars] = useState<CarItemType[]>([]);
     const [isDisabled, setIsDisabled] = useState<boolean>(false);
     const [winners, setWinners] = useState<WinnerCarType[]>([]);
-
+    const [hasWinner, setHasWinner] = useState<boolean>(false);
     const contextValue = useMemo(
-    () => ({ cars, chosenCar, currentPage, currentCars, isDisabled, winners, setChosenCar, setCars, setCurrentPage, setCurrentCars, setIsDisabled, setWinners }),
+    () => ({ cars, chosenCar, currentPage, currentCars, isDisabled, winners, hasWinner, setChosenCar, setCars, setCurrentPage, setCurrentCars, setIsDisabled, setWinners, setHasWinner }),
       [
         cars,
         chosenCar,
@@ -41,12 +43,7 @@ const CarContextProvider = ({ children }: CreateContextProviderProps) => {
         currentCars,
         isDisabled,
         winners,
-        setChosenCar,
-        setCars,
-        setCurrentPage,
-        setCurrentCars,
-        setIsDisabled,
-        setWinners],
+        hasWinner],
     );
 
     return (

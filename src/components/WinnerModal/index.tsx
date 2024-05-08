@@ -6,33 +6,34 @@ import ModalComponent from "../Modal.tsx";
 const WinnerModal = () => {
     const [modalData, setModalData] = useState<ModalData | null>(null);
     const { winners, setWinners } = useContext(CarContext);
-  const [open, setOpen] = useState(true);
-  const handleClose = () => {
-    const newWinners = winners.map((w: WinnerCarType) => {
-        return {
-            ...w,
-            isVisible: false,
-        };
-    });
-    setWinners(newWinners);
-    setOpen(false);
-  };
+    const [open, setOpen] = useState(true);
 
-  useEffect(() => {
-    const winner = winners.find((w: WinnerCarType) => w.isVisible === true);
-    if (winner) {
-        setModalData({ car: winner.name, time: winner.time });
-        setOpen(true);
-    } else {
-        setModalData(null);
-        setOpen(false);
-    }
-  }, [winners]);
+    const handleClose = () => {
+      const newWinners = winners.map((w: WinnerCarType) => {
+          return {
+              ...w,
+              isVisible: false,
+          };
+      });
+      setWinners(newWinners);
+      setOpen(false);
+    };
 
-  if (!modalData) return null;
-  return (
-    <ModalComponent data={modalData} open={open} handleClose={handleClose} />
-  );
+    useEffect(() => {
+      const winner = winners.find((w: WinnerCarType) => w.isVisible === true);
+      if (winner) {
+          setModalData({ car: winner.name, time: winner.time });
+          setOpen(true);
+      } else {
+          setModalData(null);
+          setOpen(false);
+      }
+    }, [winners]);
+
+    if (!modalData) return null;
+    return (
+      <ModalComponent data={modalData} open={open} handleClose={handleClose} />
+    );
 };
 
 export default WinnerModal;
