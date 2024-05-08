@@ -1,5 +1,14 @@
 # Async-race-api
 
+## (Deployment link): [https://khon-async-race.netlify.app/]
+
+## Screenshots
+![image](https://github.com/shokhrukh1212/async-race/assets/102215837/00f43765-77e9-4ac6-8ab9-d789d060f32a)
+![image-3](https://github.com/shokhrukh1212/async-race/assets/102215837/d0f34925-47c9-44c0-b3c3-cc2b3c0ef74a)
+![image-1](https://github.com/shokhrukh1212/async-race/assets/102215837/deb0d0f7-8038-4332-b661-5089dbd715b0)
+![image-2](https://github.com/shokhrukh1212/async-race/assets/102215837/b796f7ce-48ab-4335-a5be-5bdaff3ed8f5)
+
+
 ## Setup and Running
 
 - Use `node 14.x` or higher.
